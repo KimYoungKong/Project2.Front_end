@@ -2,173 +2,180 @@
 <html lang="ko">
   <head>
     <link rel="stylesheet" href="my.css">
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>Student List</title>
-
-    <!-- Bootstrap core CSS -->
-<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
-<!-- 제목 스타일 -->
-    <style> 
-      input[type=text] {
-        width: 80%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: none;
-        background-color: #bd8fe0;
-        color: white;
-      }
-      </style>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<!-- 버튼 스타일 -->
-    <style> 
+    <!-- 제목 스타일 -->
+    <style>
+      h2.title-container {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 30px;
+        color: #333;
+      }
+    </style>
+
+    <!-- 테이블 스타일 -->
+    <style>
+      .table-container {
+        max-width: 80%;
+        margin: auto;
+      }
+
+      table.table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      table.table th {
+        background-color: #f7f7f7;
+      }
+
+      table.table th, table.table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      table.table th {
+        font-weight: bold;
+      }
+
+      table.table tr {
+        background-color: #f2f2f2;
+      }
+
+      table.table tr:nth-child(even) {
+        background-color: #e0e0e0;
+      }
+    </style>
+
+    <!-- 버튼 스타일 -->
+    <style>
       input[type=button] {
-        background-color: #8b8b8b6e;
+        background-color: #3CBC8D;
         border: none;
         color: white;
         padding: 10px 20px;
         text-decoration: none;
-        margin: 4px 2px;
+        margin: 20px 0;
         cursor: pointer;
         transition: background-color 0.5s ease-in-out;
+        display: block;
+        margin: 0 auto;
       }
       input[type=button]:hover {
-        background-color: #3CBC8D;
-        color: white;
+        background-color: #339976;
       }
-      .center-div {
-        text-align:center;
+    </style>
+
+    <!-- 커서 스타일 -->
+    <style>
+      .clickable:hover {
+        cursor: pointer;
       }
-      </style>
-
-      <!-- 커서 스타일 -->
-      <style>
-        .clickable:hover {
-          cursor: pointer;
-        }
-      </style>
-
-      <!-- 넓이 -->
-      <style>
-        .title-container {
-          max-width: 80%;
-          margin: auto;
-        }
-
-        .table-container {
-          max-width: 80%;
-          margin: auto;
-        }
-      </style>
-
-    <!-- Custom styles for this template -->
+    </style>
   </head>
 
   <body id="index-page">
+    <h2 class="title-container">학생 정보</h2>
 
-      <h2 class="title-container">
-        <form>
-          <input type="text" id="fname" name="fname" value="학생 정보">
-        </form>
-      </h2>
+    <div class="table-container">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">학번</th>
+            <th scope="col">이름</th>
+            <th scope="col">성별</th>
+            <th scope="col">학부</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200120&name=김영빈&sex=남&department=전산전자공학부&&birth=03.02.28&&mbti=INFP&&phoneno=010-2227-6505&&email=kyb0228@handong.ac.kr'">
+            <td>1</td>
+            <td>22200120</td>
+            <td>김영빈</td>
+            <td>남</td>
+            <td>전산전자공학부</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=이재용&sex=남&department=기계제어학부&&birth=02.10.05&&mbti=INTJ&&phoneno=010-1234-5678&&email=jdragon@handong.ac.kr'">
+            <td>2</td>
+            <td>22200???</td>
+            <td>이재용</td>
+            <td>남</td>
+            <td>기계제어학부</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=최민재&sex=남&department=군대 ㅋ&&birth=03.06.20&&mbti=ISTJ&&phoneno=010-1234-5678&&email=cmj@handong.ac.kr'">
+            <td>3</td>
+            <td>22200???</td>
+            <td>최민재</td>
+            <td>남</td>
+            <td>군대</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=박현빈&sex=남&department=곧 군대감 ㅋ&&birth=03.05.23&&mbti=ENFP&&phoneno=010-1234-5678&&email=phb@handong.ac.kr'">
+            <td>4</td>
+            <td>22200???</td>
+            <td>박현빈</td>
+            <td>남</td>
+            <td>곧 군대</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=21900???&name=김태희&sex=남&department=새섬위원회위원장&&birth=00.12.19&&mbti=ENFJ&&phoneno=010-1234-5678&&email=nadan@handong.ac.kr'">
+            <td>5</td>
+            <td>21900???</td>
+            <td>김태희</td>
+            <td>남</td>
+            <td>새섬위원회위원장</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22000???&name=임예담&sex=여&department=콘텐츠융합디자인학부&&birth=01.06.03&&mbti=ISTJ&&phoneno=010-1234-5678&&email=damdadi@handong.ac.kr'">
+            <td>6</td>
+            <td>22000???</td>
+            <td>임예담</td>
+            <td>여</td>
+            <td>벨기에 초콜릿 먹으러감</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=박주은&sex=여&department=생명과학부&&birth=01.02.02&&mbti=SKY&&phoneno=010-1234-5678&&email=seosky@handong.ac.kr'">
+            <td>7</td>
+            <td>22200???</td>
+            <td>박주은</td>
+            <td>여</td>
+            <td>생명과학부</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=최지혜&sex=여&department=커뮤니케이션학부&&birth=02.10.01&&mbti=ENFP&&phoneno=010-1234-5678&&email=jennifer@handong.ac.kr'">
+            <td>8</td>
+            <td>22200???</td>
+            <td>최지혜</td>
+            <td>여</td>
+            <td>커뮤니케이션학부</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=김예진&sex=여&department=경영경제학부&&birth=03.07.16&&mbti=ESFP&&phoneno=010-1234-5678&&email=yejinKim@handong.ac.kr'">
+            <td>9</td>
+            <td>22200???</td>
+            <td>김예진</td>
+            <td>여</td>
+            <td>경영경제학부</td>
+          </tr>
+          <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=이예진&sex=여&department=경영경제학부&&birth=03.06.30&&mbti=ESFJ&&phoneno=010-1234-5678&&email=yejinLee@handong.ac.kr'">
+            <td>10</td>
+            <td>22200???</td>
+            <td>이예진</td>
+            <td>여</td>
+            <td>경영경제학부</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <div class="table-container" class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">No.</th>
-              <th scope="col">학번</th>
-              <th scope="col">이름</th>
-              <th scope="col">성별</th>
-              <th scope="col">학부</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200120&name=김영빈&sex=남&department=전산전자공학부&&birth=03.02.28&&mbti=INFP&&phoneno=010-2227-6505&&email=kyb0228@handong.ac.kr'">
-              <td>1</td>
-              <td>22200120</a></td>
-              <td>김영빈</td>
-              <td>남</td>
-              <td>전산전자공학부</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=이재용&sex=남&department=기계제어학부&&birth=02.10.05&&mbti=INTJ&&phoneno=010-1234-5678&&email=jdragon@handong.ac.kr'">
-              <td>2</td>
-              <td>22200???</td>
-              <td>이재용</td>
-              <td>남</td>
-              <td>기계제어학부</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=최민재&sex=남&department=군대 ㅋ&&birth=03.06.20&&mbti=ISTJ&&phoneno=010-1234-5678&&email=cmj@handong.ac.kr'">
-              <td>3</td>
-              <td>22200???</td>
-              <td>최민재</td>
-              <td>남</td>
-              <td>군대</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=박현빈&sex=남&department=곧 군대감 ㅋ&&birth=03.05.23&&mbti=ENFP&&phoneno=010-1234-5678&&email=phb@handong.ac.kr'">
-              <td>4</td>
-              <td>22200???</td>
-              <td>박현빈</td>
-              <td>남</td>
-              <td>곧 군대</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=21900???&name=김태희&sex=남&department=새섬위원회위원장&&birth=00.12.19&&mbti=ENFJ&&phoneno=010-1234-5678&&email=nadan@handong.ac.kr'">
-              <td>5</td>
-              <td>21900???</td>
-              <td>김태희</td>
-              <td>남</td>
-              <td>새섬위원회위원장</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22000???&name=임예담&sex=여&department=콘텐츠융합디자인학부&&birth=01.06.03&&mbti=ISTJ&&phoneno=010-1234-5678&&email=damdadi@handong.ac.kr'">
-              <td>6</td>
-              <td>22000???</td>
-              <td>임예담</td>
-              <td>여</td>
-              <td>벨기에 초콜릿 먹으러감</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=박주은&sex=여&department=생명과학부&&birth=01.02.02&&mbti=SKY&&phoneno=010-1234-5678&&email=seosky@handong.ac.kr'">
-              <td>7</td>
-              <td>22200???</td>
-              <td>박주은</td>
-              <td>여</td>
-              <td>생명과학부</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=최지혜&sex=여&department=커뮤니케이션학부&&birth=02.10.01&&mbti=ENFP&&phoneno=010-1234-5678&&email=jennifer@handong.ac.kr'">
-              <td>8</td>
-              <td>22200???</td>
-              <td>최지혜</td>
-              <td>여</td>
-              <td>커뮤니케이션학부</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=김예진&sex=여&department=경영경제학부&&birth=03.07.16&&mbti=ESFP&&phoneno=010-1234-5678&&email=yejinKim@handong.ac.kr'">
-              <td>9</td>
-              <td>22200???</td>
-              <td>김예진</td>
-              <td>여</td>
-              <td>경영경제학부</td>
-            </tr>
-            <tr class="clickable" onclick="location.href='view.html?studentno=22200???&name=이예진&sex=여&department=경영경제학부&&birth=03.06.30&&mbti=ESFJ&&phoneno=010-1234-5678&&email=yejinLee@handong.ac.kr'">
-              <td>10</td>
-              <td>22200???</td>
-              <td>이예진</td>
-              <td>여</td>
-              <td>경영경제학부</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="center-div">
-        <a href="add.html"><input type="button" value="Add"></a>
-      </div>
-    </main>
-  </div>
-</div>
-
+    <div class="center-div">
+      <a href="add.html"><input type="button" value="Add"></a>
+    </div>
   </body>
 </html>
