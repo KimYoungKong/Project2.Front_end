@@ -1,50 +1,69 @@
 <!DOCTYPE html>
+<html>
 <head>
     <link rel="stylesheet" href="my.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta charset="UTF-8">
+    <title>학생 정보 입력</title>
 
-    <title>Insert title here</title>
-
-    <!-- 제목 스타일 -->
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
         h3 {
             margin-left: 20px;
             font-size: 25px;
             font-weight: bold;
+            text-align: center; /* 가운데 정렬 */
+            padding: 20px 0; /* 위아래 간격 추가 */
+            background-color: #007BFF;
+            color: white;
         }
-    </style>
 
-    <!-- 입력 칸 스타일 -->
-    <style>
-        input[type=text], select {
-            width: 210px;
-        }
-    </style>
-
-<!-- 버튼 스타일 -->
-    <style>
-        .add-button {
-            margin-left: 150px;
-        }
-    </style>
-
-<!-- 테이블 스타일 -->
-    <style>
-        table {
-            margin-left: 20px;
-        }
-    </style>
-
-    <!-- 테이블 위아래 선 스타일 -->
-    <style>
         .table-wrapper {
             width: 330px;
-            margin-left: 20px;
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
-            padding: 10px 0; 
+            margin: 0 auto; /* 수평 가운데 정렬 */
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .add-button {
+            display: block;
+            width: 150px;
+            margin: 0 auto; /* 수평 가운데 정렬 */
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #0056b3;
         }
     </style>
 
@@ -55,11 +74,10 @@
             var sex = document.getElementById("sex").value;
             var department = document.getElementById("department").value;
 
-            if(studentno === "" || name === "" || sex === "" || department === "") {
+            if (studentno === "" || name === "" || sex === "" || department === "") {
                 alert("학번, 이름, 성별, 학부는 필수 입력 항목입니다.");
                 return false;
-            }
-            else {
+            } else {
                 alert('게시물이 추가됩니다.');
                 return true;
             }
@@ -68,69 +86,65 @@
 </head>
 
 <body id="add-page">
-<div>
-    <!-- 학번 이름 성별 학부 / 생년월일 MBTI 전화번호 이메일-->
-<h3>학생 정보 입력</h3>
-<form id="form" th:object="${information}">
+    <h3>학생 정보 입력</h3>
     <div class="table-wrapper">
-    <table>
-    <tr>
-        <td>학번</td>
-        <td>
-            <input id="studentno" type="text" th:field="*{studentno}" placeholder="학번을 입력하세요">
-        </td>
-    </tr>
-    <tr>
-        <td>이름</td>
-        <td>
-            <input id="name" type="text" th:field="*{name}" placeholder="이름을 입력하세요">
-        </td>
-    </tr>
-    <tr>
-        <td>성별</td>
-        <td>
-            <select id="sex" th:field="*{sex}">
-                <option value="">성별을 선택하세요</option>
-                <option value="남">남</option>
-                <option value="여">여</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td>학부</td>
-        <td>
-            <input id="department" type="text" th:field="*{department}" placeholder="학부를 입력하세요">
-        </td>
-    </tr>
-    <tr>
-        <td>생년월일</td>
-        <td>
-            <input type="text" th:field="*{birth}" placeholder="생년월일을 입력하세요(YYMMDD)">
-        </td>
-    </tr>
-    <tr>
-        <td>MBTI</td>
-        <td>
-            <input type="text" th:field="*{mbti}" placeholder="MBTI를 입력하세요">
-        </td>
-    </tr>
-    <tr>
-        <td>전화번호</td>
-        <td>
-            <input type="text" th:field="*{phoneno}" placeholder="전화번호를 입력하세요">
-        </td>
-    </tr>
-    <tr>
-        <td>이메일</td>
-        <td>
-            <input type="text" th:field="*{email}" placeholder="이메일을 입력하세요">
-        </td>
-    </tr>
-</table>
-</div>
-    <p><button type="button" onclick=validateForm() class="add-button">추가</button></p>
-</form>
-</div>
-    
+        <form id="form" th:object="${information}">
+            <table>
+                <tr>
+                    <td>학번</td>
+                    <td>
+                        <input id="studentno" type="text" th:field="*{studentno}" placeholder="학번을 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input id="name" type="text" th:field="*{name}" placeholder="이름을 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <select id="sex" th:field="*{sex}">
+                            <option value="">성별을 선택하세요</option>
+                            <option value="남">남</option>
+                            <option value="여">여</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>학부</td>
+                    <td>
+                        <input id="department" type="text" th:field="*{department}" placeholder="학부를 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <input type="text" th:field="*{birth}" placeholder="생년월일을 입력하세요(YYMMDD)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>MBTI</td>
+                    <td>
+                        <input type="text" th:field="*{mbti}" placeholder="MBTI를 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="text" th:field="*{phoneno}" placeholder="전화번호를 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td>
+                        <input type="text" th:field="*{email}" placeholder="이메일을 입력하세요">
+                    </td>
+                </tr>
+            </table>
+            <p><button type="button" onclick="validateForm()" class="add-button">추가</button></p>
+        </form>
+    </div>
 </body>
 </html>
